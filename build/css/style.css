@@ -1,0 +1,135 @@
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 40px 20px;
+    color: #333;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e1e8ed; 
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: 600;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+
+tr:hover {
+    background-color: #eef2f5;
+}
+
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #38a169;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2f855a;
+}
+
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #3182ce;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2b6cb0;
+}
+
+
+a[href="crear.php"], a[href="index.php"] {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    background-color: #3182ce;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+a[href="crear.php"]:hover, a[href="index.php"]:hover {
+    background-color: #2b6cb0;
+}
