@@ -1,8 +1,8 @@
 <?php
-// Conectar a la base de datos
+
 require 'includes/database.php';
 
-// Consultar todos los productos
+
 $query = "SELECT * FROM productos";
 $resultado = mysqli_query($conexion, $query);
 ?>
@@ -14,20 +14,20 @@ $resultado = mysqli_query($conexion, $query);
     <title>Inventario de Productos</title>
     <link rel="stylesheet" href="build/css/style.css">
     <style>
-        /* Estilos para la ventana emergente (Modal) oculta por defecto */
+        
         .modal { 
-            display: none; /* Oculto inicialmente */
+            display: none; 
             position: fixed; 
             z-index: 1; 
             left: 0; 
             top: 0; 
             width: 100%; 
             height: 100%; 
-            background-color: rgba(0,0,0,0.5); /* Fondo oscuro semitransparente */
+            background-color: rgba(0,0,0,0.5); 
         }
         .modal-content { 
             background-color: #fefefe; 
-            margin: 10% auto; /* Centrado en la pantalla */
+            margin: 10% auto; 
             padding: 20px; 
             border-radius: 8px;
             width: 80%; 
@@ -101,17 +101,17 @@ $resultado = mysqli_query($conexion, $query);
     </table>
 
     <script>
-        // Función para mostrar el modal del ID correspondiente
+       
         function abrirModal(id) {
             document.getElementById('modal-' + id).style.display = 'block';
         }
 
-        // Función para ocultar el modal del ID correspondiente al darle a la "X"
+        
         function cerrarModal(id) {
             document.getElementById('modal-' + id).style.display = 'none';
         }
 
-        // Función extra: cerrar el modal si el usuario hace clic fuera de la tarjeta blanca
+       
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
