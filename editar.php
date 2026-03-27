@@ -1,15 +1,15 @@
 <?php
 require 'includes/database.php';
 
-// Atrapamos el ID de la URL
+
 $id = $_GET['id'];
 
-// Buscamos los datos actuales del producto para rellenar el formulario
+
 $query_producto = "SELECT * FROM productos WHERE id = $id";
 $resultado_producto = mysqli_query($conexion, $query_producto);
 $producto = mysqli_fetch_assoc($resultado_producto);
 
-// ZONA SUPERIOR: Validación y actualización en PHP
+
 $errores = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,13 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $color = $_POST['color'];
     $fecha_ingreso = $_POST['fecha_ingreso'];
 
-    // Validaciones
+    
     if (strlen($nombre) > 100) { $errores[] = "El nombre no puede tener más de 100 caracteres."; }
     if (strlen($categoria) > 50) { $errores[] = "La categoría no puede tener más de 50 caracteres."; }
     if ($precio < 0 || $precio > 99999) { $errores[] = "El precio no puede ser negativo ni mayor a 99,999."; }
     if ($stock < 0 || $stock > 10000) { $errores[] = "El stock no puede ser negativo ni mayor a 10,000."; }
     
-    // Si no hay errores, actualizar
+    
     if (empty($errores)) {
         $query = "UPDATE productos SET 
                     nombre = '$nombre', 
