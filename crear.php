@@ -1,7 +1,7 @@
 <?php
 require 'includes/database.php';
 
-// ZONA SUPERIOR: Validación y guardado en PHP
+
 $errores = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $color = $_POST['color'];
     $fecha_ingreso = $_POST['fecha_ingreso'];
 
-    // Validaciones
+    
     if (strlen($nombre) > 35) { $errores[] = "El nombre no puede tener más de 100 caracteres."; }
     if (strlen($categoria) > 20) { $errores[] = "La categoría no puede tener más de 50 caracteres."; }
     if ($precio < 0 || $precio > 99999) { $errores[] = "El precio no puede ser negativo ni mayor a 99,999."; }
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fecha_hoy = date('Y-m-d');
     if ($fecha_ingreso < $fecha_hoy) { $errores[] = "La fecha no puede ser anterior al día de hoy."; }
 
-    // Si no hay errores, guardar
+    
     if (empty($errores)) {
         $query = "INSERT INTO productos (nombre, categoria, precio, stock, descripcion, marca, proveedor, peso, color, fecha_ingreso) 
                   VALUES ('$nombre', '$categoria', '$precio', '$stock', '$descripcion', '$marca', '$proveedor', '$peso', '$color', '$fecha_ingreso')";
